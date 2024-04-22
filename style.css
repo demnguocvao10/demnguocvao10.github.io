@@ -1,0 +1,71 @@
+body {
+  font-family: 'Segoe UI', 'Lucida Grande', -apple-system, BlinkMacSystemFont, 'Liberation Sans', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-image: url('images/body-background.jpg');
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.container {
+  display: block; 
+  justify-content: space-around; /* Distribute containers evenly */
+  flex-wrap: wrap; /* Allow containers to wrap to the next line */ 
+  width: 50% !important; 
+  margin: 0 auto;
+  object-position: 0%;
+}
+
+.countdown-clock {
+  background-color: #000000;
+  border-radius: 5px;
+  padding: 10px; /* Reduce padding slightly */
+  text-shadow: #000000;
+  text-align: center;
+  margin-bottom: 10px;
+  background-image: url('images/aesthetic.jpg'); /* Add the background image */
+  background-size: cover; /* Make the image fit the square */   
+  background-position: center; /* Center the image within the squares */
+  opacity: 0.7;
+  border: 1px solid #ddd;
+  flex: 0 0 30%; /* Allow them to shrink slightly if needed */
+  margin-bottom: 20px; /* Add space between clock containers */
+  cursor: pointer;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.countdown-clock:hover {
+  transform: scale(1.15); /* Slightly increase size on hover */
+  box-shadow: 0 0 20px 5px rgba(185, 32, 32, 0.4); /* Adjust color as needed */
+  animation: pulse 1.5s infinite alternate; 
+}
+@keyframes pulse {
+  from { box-shadow: 0 0 20px 5px rgba(255,255,255,0.4); } 
+  to   { box-shadow: 0 0 20px 0px rgba(255,255,255,0); }
+}
+.countdown-clock .time-group {
+  display: flex; 
+}
+h2 {
+  margin-bottom: 5px; /* Reduce margin slightly */
+  font-size: 20px; /* Increase heading size */
+}
+
+.clock-label,
+.time-square {
+  display: inline-block;
+  margin: 5px; /* Reduce margin slightly */
+  padding: 5px; /* Reduce padding slightly */
+  font-size: 30px; /* Increase font size */
+}
+
+.clock-label {
+  background-color: #ffffff;
+}
+
+.time-square {
+  background-color: #eee;
+  border: 1px solid #ddd; /* Add a thin border */
+
+}
