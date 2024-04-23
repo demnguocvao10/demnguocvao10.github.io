@@ -3,49 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đếm ngược ngày thi vào 10</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Đếm ngược thời gian thi vào 10</title>
+  <link rel="stylesheet" href="style.css"> <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script> <script src="script.js"></script> <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 </head>
 <body>
-  <center><h1>Đếm ngược ngày thi vào 10</h1></center>
-  <div class="container">
-    <div class="countdown-clock">
-      <h2>Môn Ngữ Văn</h2>
-      <div class="time-square" id="days1">00</div>
-      <div class="clock-label">Ngày</div>
-      <div class="time-square" id="hours1">00</div>
-      <div class="clock-label">Giờ</div>
-      <div class="time-square" id="minutes1">00</div>
-      <div class="clock-label">Phút</div>
-      <div class="time-square" id="seconds1">00</div>
-      <div class="clock-label">Giây</div>
-      
+    <h2>Đếm ngược thời gian thi vào cấp 3</h2>
+  <h1>Thời gian còn lại</h1>
+<div class="clock-slider">
+  <div class="clock-container">
+    <a href="https://www.youtube.com/watch?v=4LSdsTiOiZI"><div class="countdown-clock" id="clock1"> 
+      <h2>Môn Ngữ Văn - Ngày thi 8h ngày 08 tháng 06</h2>
     </div>
-    <div class="countdown-clock">
-      <h2>Môn Tiếng Anh</h2>
-      <div class="time-square" id="days2">00</div>
-      <div class="clock-label">Ngày</div>
-      <div class="time-square" id="hours2">00</div>
-      <div class="clock-label">Giờ</div>
-      <div class="time-square" id="minutes2">00</div>
-      <div class="clock-label">Phút</div>
-      <div class="time-square" id="seconds2">00</div>
-      <div class="clock-label">Giây</div>
-      
-    </div>
-    <div class="countdown-clock">
-      <h2>Môn Toán</h2>
-      <div class="time-square" id="days3">00</div>
-      <div class="clock-label">Ngày</div>
-      <div class="time-square" id="hours3">00</div>
-      <div class="clock-label">Giờ</div>
-      <div class="time-square" id="minutes3">00</div>
-      <div class="clock-label">Phút</div>
-      <div class="time-square" id="seconds3">00</div>
-      <div class="clock-label">Giây</div>
-      
-    </div>
+   <script src="clock1.js"></script></a>
   </div>
-  <script src="script.js"></script>
+
+  <div class="clock-container">
+    <a href="https://www.youtube.com/watch?v=RbhcFMhae9k"><div class="countdown-clock" id="clock2">
+      <h2>Môn Tiếng Anh - Ngày thi 14h ngày 08 tháng 06</h2>
+    </div>
+    <script src="clock2.js"></script></a>
+  </div>
+
+  <div class="clock-container">
+    <a href="https://www.youtube.com/watch?v=GZCQqg9dwgs"><div class="countdown-clock" id="clock3"> 
+      <h2>Môn Toán - Ngày thi 8h ngày 09 tháng 06</h2>
+    </div>
+    <script src="clock3.js"></script></a>
+  </div>
+</div>
 </body>
 </html>

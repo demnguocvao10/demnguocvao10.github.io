@@ -1,71 +1,83 @@
 body {
-  font-family: 'Segoe UI', 'Lucida Grande', -apple-system, BlinkMacSystemFont, 'Liberation Sans', sans-serif;
-  margin: 0;
-  padding: 20px;
-  background-image: url('images/body-background.jpg');
-  background-size: 120%;
-  background-repeat: no-repeat;
-  background-position: center;
+    font-family: 'Segoe UI', 'Lucida Grande', -apple-system, BlinkMacSystemFont, 'Liberation Sans', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('images/body-background.jpg');
+    background-size: 120%;
+    color: white;
 }
 
-
-.container {
-  display: block; 
-  justify-content: space-around; /* Distribute containers evenly */
-  flex-wrap: wrap; /* Allow containers to wrap to the next line */ 
-  width: 50% !important; 
-  margin: 0 auto;
-  object-position: 0%;
-}
-
-.countdown-clock {
-  background-color: #000000;
-  border-radius: 5px;
-  padding: 10px; /* Reduce padding slightly */
-  text-shadow: #000000;
-  text-align: center;
-  margin-bottom: 10px;
-  background-image: url('images/aesthetic.jpg'); /* Add the background image */
-  background-size: cover; /* Make the image fit the square */   
-  background-position: center; /* Center the image within the squares */
-  opacity: 0.7;
-  border: 1px solid #ddd;
-  flex: 0 0 30%; /* Allow them to shrink slightly if needed */
-  margin-bottom: 20px; /* Add space between clock containers */
-  cursor: pointer;
-  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.countdown-clock:hover {
-  transform: scale(1.15); /* Slightly increase size on hover */
-  box-shadow: 0 0 20px 5px rgba(185, 32, 32, 0.4); /* Adjust color as needed */
-  animation: pulse 1.5s infinite alternate; 
-}
-@keyframes pulse {
-  from { box-shadow: 0 0 20px 5px rgba(255,255,255,0.4); } 
-  to   { box-shadow: 0 0 20px 0px rgba(255,255,255,0); }
-}
-.countdown-clock .time-group {
+.clock-container {
+  background-image: url('images/aesthetic.jpg');
   display: flex; 
+  justify-content: space-around; 
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  width: auto; /* Allow container to adjust its width to content */
+  padding: 30px;
+  transition: transform 1s cubic-bezier(.17,.67,.21,1.01);
 }
-h2 {
-  margin-bottom: 5px; /* Reduce margin slightly */
-  font-size: 20px; /* Increase heading size */
+.clock-container:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
+.countdown-clock h2 {
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
-.clock-label,
-.time-square {
-  display: inline-block;
-  margin: 5px; /* Reduce margin slightly */
-  padding: 5px; /* Reduce padding slightly */
-  font-size: 30px; /* Increase font size */
+.clock-container span {
+    opacity: 0.7; 
+    background-color: #000000; /* White background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 20px;
+    margin-right: 10px; 
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif; /* Example of a clean sans-serif font */
+}
+.click-container a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+a:link{
+    text-decoration: none;
+    color: white;
+}
+a:visited{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+a:active{
+    text-decoration: none;
+    color: white;
 }
 
-.clock-label {
-  background-color: #ffffff;
-}
-
-.time-square {
-  background-color: #eee;
-  border: 1px solid #ddd; /* Add a thin border */
-
-}
+@media (max-width: 768px) { /* Adjust breakpoint for your target mobile devices */
+    .clock-slider {
+        width: 100%; 
+        overflow-x: auto;  /* Enable horizontal scrolling */
+        overflow-y: hidden; /* Hide vertical scrollbar if needed */
+        white-space: nowrap; /* Keep containers inline*/
+        transition: scroll-left 0.3s ease-out;
+    }
+    
+    .clock-container {
+        display: inline-block;  /* Allow containers to sit side-by-side */
+        width: calc(100% - 20px); /* Make containers viewport width (minus some margin) */
+        margin-right: 20px;
+        height: 40%;
+        scale: auto;
+    }
+} 
