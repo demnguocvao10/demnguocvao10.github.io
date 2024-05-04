@@ -1,83 +1,149 @@
-body {
-    font-family: 'Segoe UI', 'Lucida Grande', -apple-system, BlinkMacSystemFont, 'Liberation Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@200..800&display=swap');
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.text-h1 {
+    font-family: "Sono", sans-serif !important;
+    background: radial-gradient(circle, #5616FA, #FA168D);
+    animation: animate 5s linear infinite;
+    background-size: 200% 200%;
+    background-clip: text;
+    color: transparent;
+
+}
+.text-h3{
+    font-family: 'Sono', sans-serif !important;
+    background: radial-gradient(circle, #5EEBC0, #5E60EB);
+    animation: animate 5s linear infinite;
+    background-size: 200% 200%;
+    background-clip: text;
+    color: transparent;
+}
+@keyframes animate{
+    0%{
+        background-position: 0% 0%;
+    }
+    50%{
+        background-position: 150% 150%;
+    }
+    100%{
+        background-position: 0% 0%;
+    }
+
+}
+body {
+    color: antiquewhite ;
     display: flex;
     flex-direction: column;
+    gap: 100px;
+    justify-content: center;
     align-items: center;
-    background-image: url('images/body-background.jpg');
-    background-size: 120%;
-    color: white;
+    min-height: 100vh;
+    background: #2f363e;
+    background-image: url(images/Study-dark-background.jpg);
 }
 
-.clock-container {
-  background-image: url('images/aesthetic.jpg');
-  display: flex; 
-  justify-content: space-around; 
-  align-items: center;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  border-radius: 5px;
-  width: auto; /* Allow container to adjust its width to content */
-  padding: 30px;
-  transition: transform 1s cubic-bezier(.17,.67,.21,1.01);
-}
-.clock-container:hover {
-    transform: scale(1.15);
-    cursor: pointer;
-}
-.countdown-clock h2 {
-  line-height: 1.5;
-  margin-bottom: 20px;
+#time {
+    display: flex;
+    gap: 30px;
 }
 
-.clock-container span {
-    opacity: 0.7; 
-    background-color: #000000; /* White background */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    border-radius: 8px; /* Rounded corners */
-    padding: 10px 20px;
-    margin-right: 10px; 
-    font-size: 30px;
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif; /* Example of a clean sans-serif font */
+#time .circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.click-container a{
-    display: block;
+
+#time .circle svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+
+#time .circle svg circle {
     width: 100%;
     height: 100%;
-}
-a:link{
-    text-decoration: none;
-    color: white;
-}
-a:visited{
-    text-decoration: none;
-    color: white;
-}
-a:hover{
-    text-decoration: none;
-    color: white;
-}
-a:active{
-    text-decoration: none;
-    color: white;
+    fill: transparent;
+    stroke-linecap: round;
+    stroke-width: 8;
+    stroke: #282828;
+    transform: translate(5px, 5px);
 }
 
-@media (max-width: 768px) { /* Adjust breakpoint for your target mobile devices */
-    .clock-slider {
-        width: 100%; 
-        overflow-x: auto;  /* Enable horizontal scrolling */
-        overflow-y: hidden; /* Hide vertical scrollbar if needed */
-        white-space: nowrap; /* Keep containers inline*/
-        transition: scroll-left 0.3s ease-out;
-    }
-    
-    .clock-container {
-        display: inline-block;  /* Allow containers to sit side-by-side */
-        width: calc(100% - 20px); /* Make containers viewport width (minus some margin) */
-        margin-right: 20px;
-        height: 40%;
-        scale: auto;
-    }
-} 
+#time .circle svg circle:nth-child(2) {
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#time div {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    font-weight: 300;
+    font-size: 1.5em;
+}
+
+#time div span {
+    position: absolute;
+    transform: translateX(-50%) translateY(0px);
+    font-size: 0.35em;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+#time .dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+    transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#time .dots::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 15px;
+    height: 15px;
+    background: var(--clr);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+}
+
+.newYear {
+    font-size: 8em;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    line-height: 0.6em;
+    display: none;
+}
+
+.newYear span {
+    font-size: 0.5em;
+    font-weight: 300;
+}
+
+.copyrights{
+    font-family: 'Courier New', Courier, monospace;
+    position: 0% 0%;
+    opacity: 0.1;
+}
+.news{
+    display: grid;
+    position: relative;
+}
